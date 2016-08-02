@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Прочее</dataPath>
+			<field>Прочее</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Уточнить</dataPath>
+			<field>Уточнить</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Рассмотреть</dataPath>
+			<field>Рассмотреть</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ознакомиться</dataPath>
+			<field>Ознакомиться</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Исправить</dataPath>
+			<field>Исправить</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Программист</dataPath>
+			<field>Программист</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Проверить</dataPath>
+			<field>Проверить</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подсистема</dataPath>
+			<field>Подсистема</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подсистема</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Итого</dataPath>
+			<field>Итого</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итого</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КоличествоОшибокДефектоднейСрезПоследних.Программист,
+	ВЫБОР
+		КОГДА &amp;ПоИсполнителям
+			ТОГДА КоличествоОшибокДефектоднейСрезПоследних.Подсистема
+		ИНАЧЕ ""
+	КОНЕЦ КАК Подсистема,
+	КоличествоОшибокДефектоднейСрезПоследних.Рассмотреть,
+	КоличествоОшибокДефектоднейСрезПоследних.Исправить,
+	КоличествоОшибокДефектоднейСрезПоследних.Проверить,
+	КоличествоОшибокДефектоднейСрезПоследних.Ознакомиться,
+	КоличествоОшибокДефектоднейСрезПоследних.Уточнить,
+	КоличествоОшибокДефектоднейСрезПоследних.Прочее,
+	КоличествоОшибокДефектоднейСрезПоследних.Рассмотреть + КоличествоОшибокДефектоднейСрезПоследних.Исправить + КоличествоОшибокДефектоднейСрезПоследних.Проверить + КоличествоОшибокДефектоднейСрезПоследних.Ознакомиться + КоличествоОшибокДефектоднейСрезПоследних.Уточнить + КоличествоОшибокДефектоднейСрезПоследних.Прочее КАК Итого
+ИЗ
+	РегистрСведений.КоличествоОшибокДефектодней.СрезПоследних(&amp;Период, ) КАК КоличествоОшибокДефектоднейСрезПоследних
+ГДЕ
+	КоличествоОшибокДефектоднейСрезПоследних.Исполнители = &amp;ПоИсполнителям
+	И КоличествоОшибокДефектоднейСрезПоследних.Ошибки = &amp;ПоОшибкам
+	И ВЫБОР
+			КОГДА &amp;ВыводитьВнешних
+				ТОГДА ИСТИНА
+			ИНАЧЕ КоличествоОшибокДефектоднейСрезПоследних.Программист.Внешний = ЛОЖЬ
+		КОНЕЦ</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Исправить</dataPath>
+		<expression>Сумма(Исправить)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Ознакомиться</dataPath>
+		<expression>Сумма(Ознакомиться)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Проверить</dataPath>
+		<expression>Сумма(Проверить)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Прочее</dataPath>
+		<expression>Сумма(Прочее)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Рассмотреть</dataPath>
+		<expression>Сумма(Рассмотреть)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Уточнить</dataPath>
+		<expression>Сумма(Уточнить)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Итого</dataPath>
+		<expression>Сумма(Итого)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПоИсполнителям</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По исполнителям</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПоОшибкам</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По ошибкам</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ВыводитьВнешних</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить внешних</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>false</useRestriction>
+		<availableAsField>false</availableAsField>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Программист</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подсистема</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Рассмотреть</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Исправить</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Проверить</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ознакомиться</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Уточнить</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Прочее</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Итого</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>23e8053e-63f0-47f7-81d6-9f4c44937b28</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПоИсполнителям</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>b6ce3355-2b70-4f5f-b14d-c707d1f5ddd4</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПоОшибкам</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>f57b8177-a185-45ed-bf15-effbb1d2b9f2</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьВнешних</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:userSettingID>b9ed72fd-e7dc-4daa-afbf-a055297757cd</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Итого</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
