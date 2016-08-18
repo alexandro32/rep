@@ -119,11 +119,15 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>ДеньКачества</Subsystem>
+			<CommonModule>ОбщегоНазначенияКлиентСервер</CommonModule>
 			<Catalog>Программисты</Catalog>
 			<Catalog>ПодсистемыПроекта</Catalog>
 			<Document>РезультатыДняКачества</Document>
 			<Report>АнализДняКачества</Report>
-			<InformationRegister>КоличествоОшибокДефектодней</InformationRegister>
+			<InformationRegister>ОшибкиПоИсполнителям</InformationRegister>
+			<InformationRegister>ОшибкиПоОтветственным</InformationRegister>
+			<InformationRegister>ДефектодниПоИсполнителям</InformationRegister>
+			<InformationRegister>ДефектодниПоОтветственным</InformationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>

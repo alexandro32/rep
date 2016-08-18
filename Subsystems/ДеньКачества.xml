@@ -18,9 +18,11 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодсистемыПроекта</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Программисты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.РезультатыДняКачества</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">929c37b7-8d1c-4dfa-8685-e6fdc1035396</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.АнализДняКачества</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.КоличествоОшибокДефектодней</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ОшибкиПоИсполнителям</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ДефектодниПоИсполнителям</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ОшибкиПоОтветственным</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ДефектодниПоОтветственным</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

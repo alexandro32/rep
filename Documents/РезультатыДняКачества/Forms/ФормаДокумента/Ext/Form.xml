@@ -39,7 +39,7 @@
 							<v8:content>Группа шапка</v8:content>
 						</v8:item>
 					</ToolTip>
-					<Representation>None</Representation>
+					<Representation>NormalSeparation</Representation>
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="91"/>
 					<ChildItems>
@@ -61,13 +61,6 @@
 							<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
 							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
 						</InputField>
-					</ChildItems>
-				</UsualGroup>
-				<UsualGroup name="Группа4" id="206">
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="207"/>
-					<ChildItems>
 						<UsualGroup name="ГруппаПериодДняКачества" id="96">
 							<Title>
 								<v8:item>
@@ -111,37 +104,6 @@
 								</InputField>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="Группа2" id="196">
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="197"/>
-							<ChildItems>
-								<CheckBoxField name="Исполнители" id="188">
-									<DataPath>Объект.Исполнители</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>по исполнителям</v8:content>
-										</v8:item>
-									</Title>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ИсполнителиКонтекстноеМеню" id="189"/>
-									<ExtendedTooltip name="ИсполнителиРасширеннаяПодсказка" id="190"/>
-								</CheckBoxField>
-								<CheckBoxField name="Ошибки" id="185">
-									<DataPath>Объект.Ошибки</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>количество ошибок</v8:content>
-										</v8:item>
-									</Title>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ОшибкиКонтекстноеМеню" id="186"/>
-									<ExtendedTooltip name="ОшибкиРасширеннаяПодсказка" id="187"/>
-								</CheckBoxField>
-							</ChildItems>
-						</UsualGroup>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -155,14 +117,246 @@
 			</Title>
 			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="14"/>
 			<ChildItems>
-				<Page name="ГруппаПоИсполнителям" id="15">
+				<Page name="ГруппаДДПоИсполнителям" id="72">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Ошибки</v8:content>
+							<v8:content>2. Дефектодни по исполнителям</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ГруппаПоИсполнителямРасширеннаяПодсказка" id="16"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ДДПо исполнителям</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаДДПоИсполнителямРасширеннаяПодсказка" id="73"/>
+					<ChildItems>
+						<Table name="ДефектодниПоИсполнителям" id="208">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ДефектодниПоИсполнителям</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДефектодниПоИсполнителямКонтекстноеМеню" id="209"/>
+							<AutoCommandBar name="ДефектодниПоИсполнителямКоманднаяПанель" id="210"/>
+							<ExtendedTooltip name="ДефектодниПоИсполнителямРасширеннаяПодсказка" id="211"/>
+							<SearchStringAddition name="ДефектодниПоИсполнителямСтрокаПоиска" id="212">
+								<AdditionSource>
+									<Item>ДефектодниПоИсполнителям</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДефектодниПоИсполнителямСтрокаПоискаКонтекстноеМеню" id="213"/>
+								<ExtendedTooltip name="ДефектодниПоИсполнителямСтрокаПоискаРасширеннаяПодсказка" id="214"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДефектодниПоИсполнителямСостояниеПросмотра" id="215">
+								<AdditionSource>
+									<Item>ДефектодниПоИсполнителям</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДефектодниПоИсполнителямСостояниеПросмотраКонтекстноеМеню" id="216"/>
+								<ExtendedTooltip name="ДефектодниПоИсполнителямСостояниеПросмотраРасширеннаяПодсказка" id="217"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДефектодниПоИсполнителямУправлениеПоиском" id="218">
+								<AdditionSource>
+									<Item>ДефектодниПоИсполнителям</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДефектодниПоИсполнителямУправлениеПоискомКонтекстноеМеню" id="219"/>
+								<ExtendedTooltip name="ДефектодниПоИсполнителямУправлениеПоискомРасширеннаяПодсказка" id="220"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДефектодниПоИсполнителямНомерСтроки" id="221">
+									<DataPath>Объект.ДефектодниПоИсполнителям.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямНомерСтрокиКонтекстноеМеню" id="222"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямНомерСтрокиРасширеннаяПодсказка" id="223"/>
+								</LabelField>
+								<InputField name="ДефектодниПоИсполнителямПрограммист" id="224">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Программист</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямПрограммистКонтекстноеМеню" id="225"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямПрограммистРасширеннаяПодсказка" id="226"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямПодсистема" id="227">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Подсистема</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямПодсистемаКонтекстноеМеню" id="228"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямПодсистемаРасширеннаяПодсказка" id="229"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямРассмотреть" id="230">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Рассмотреть</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямРассмотретьКонтекстноеМеню" id="231"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямРассмотретьРасширеннаяПодсказка" id="232"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямИсправить" id="233">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Исправить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямИсправитьКонтекстноеМеню" id="234"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямИсправитьРасширеннаяПодсказка" id="235"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямПроверить" id="236">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Проверить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямПроверитьКонтекстноеМеню" id="237"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямПроверитьРасширеннаяПодсказка" id="238"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямОзнакомиться" id="239">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Ознакомиться</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямОзнакомитьсяКонтекстноеМеню" id="240"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямОзнакомитьсяРасширеннаяПодсказка" id="241"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямУточнить" id="242">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Уточнить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямУточнитьКонтекстноеМеню" id="243"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямУточнитьРасширеннаяПодсказка" id="244"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямПрочее" id="245">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Прочее</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямПрочееКонтекстноеМеню" id="246"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямПрочееРасширеннаяПодсказка" id="247"/>
+								</InputField>
+								<InputField name="ДефектодниПоИсполнителямИтого" id="248">
+									<DataPath>Объект.ДефектодниПоИсполнителям.Итого</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоИсполнителямИтогоКонтекстноеМеню" id="249"/>
+									<ExtendedTooltip name="ДефектодниПоИсполнителямИтогоРасширеннаяПодсказка" id="250"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаДДПоОтветсвенным" id="251">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>3. Дефектодни по ответсвенным</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ДДПо ответсвенным</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаДДПоОтветсвеннымРасширеннаяПодсказка" id="252"/>
+					<ChildItems>
+						<Table name="ДефектодниПоОтветсвенным" id="253">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>Объект.ДефектодниПоОтветственным</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ДефектодниПоОтветсвеннымКонтекстноеМеню" id="254"/>
+							<AutoCommandBar name="ДефектодниПоОтветсвеннымКоманднаяПанель" id="255"/>
+							<ExtendedTooltip name="ДефектодниПоОтветсвеннымРасширеннаяПодсказка" id="256"/>
+							<SearchStringAddition name="ДефектодниПоОтветсвеннымСтрокаПоиска" id="257">
+								<AdditionSource>
+									<Item>ДефектодниПоОтветсвенным</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДефектодниПоОтветсвеннымСтрокаПоискаКонтекстноеМеню" id="258"/>
+								<ExtendedTooltip name="ДефектодниПоОтветсвеннымСтрокаПоискаРасширеннаяПодсказка" id="259"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДефектодниПоОтветсвеннымСостояниеПросмотра" id="260">
+								<AdditionSource>
+									<Item>ДефектодниПоОтветсвенным</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДефектодниПоОтветсвеннымСостояниеПросмотраКонтекстноеМеню" id="261"/>
+								<ExtendedTooltip name="ДефектодниПоОтветсвеннымСостояниеПросмотраРасширеннаяПодсказка" id="262"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДефектодниПоОтветсвеннымУправлениеПоиском" id="263">
+								<AdditionSource>
+									<Item>ДефектодниПоОтветсвенным</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДефектодниПоОтветсвеннымУправлениеПоискомКонтекстноеМеню" id="264"/>
+								<ExtendedTooltip name="ДефектодниПоОтветсвеннымУправлениеПоискомРасширеннаяПодсказка" id="265"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ДефектодниПоОтветсвеннымНомерСтроки" id="266">
+									<DataPath>Объект.ДефектодниПоОтветственным.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымНомерСтрокиКонтекстноеМеню" id="267"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымНомерСтрокиРасширеннаяПодсказка" id="268"/>
+								</LabelField>
+								<InputField name="ДефектодниПоОтветсвеннымПрограммист" id="269">
+									<DataPath>Объект.ДефектодниПоОтветственным.Программист</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымПрограммистКонтекстноеМеню" id="270"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымПрограммистРасширеннаяПодсказка" id="271"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымПодсистема" id="272">
+									<DataPath>Объект.ДефектодниПоОтветственным.Подсистема</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымПодсистемаКонтекстноеМеню" id="273"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымПодсистемаРасширеннаяПодсказка" id="274"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымРассмотреть" id="275">
+									<DataPath>Объект.ДефектодниПоОтветственным.Рассмотреть</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымРассмотретьКонтекстноеМеню" id="276"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымРассмотретьРасширеннаяПодсказка" id="277"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымИсправить" id="278">
+									<DataPath>Объект.ДефектодниПоОтветственным.Исправить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымИсправитьКонтекстноеМеню" id="279"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымИсправитьРасширеннаяПодсказка" id="280"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымПроверить" id="281">
+									<DataPath>Объект.ДефектодниПоОтветственным.Проверить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымПроверитьКонтекстноеМеню" id="282"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымПроверитьРасширеннаяПодсказка" id="283"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымОзнакомиться" id="284">
+									<DataPath>Объект.ДефектодниПоОтветственным.Ознакомиться</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымОзнакомитьсяКонтекстноеМеню" id="285"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымОзнакомитьсяРасширеннаяПодсказка" id="286"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымУточнить" id="287">
+									<DataPath>Объект.ДефектодниПоОтветственным.Уточнить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымУточнитьКонтекстноеМеню" id="288"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымУточнитьРасширеннаяПодсказка" id="289"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымПрочее" id="290">
+									<DataPath>Объект.ДефектодниПоОтветственным.Прочее</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымПрочееКонтекстноеМеню" id="291"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымПрочееРасширеннаяПодсказка" id="292"/>
+								</InputField>
+								<InputField name="ДефектодниПоОтветсвеннымИтого" id="293">
+									<DataPath>Объект.ДефектодниПоОтветственным.Итого</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ДефектодниПоОтветсвеннымИтогоКонтекстноеМеню" id="294"/>
+									<ExtendedTooltip name="ДефектодниПоОтветсвеннымИтогоРасширеннаяПодсказка" id="295"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаОшибкиПоИсполнителям" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>4. Ошибки по исполнителям</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ошибки по исполнителям</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОшибкиПоИсполнителямРасширеннаяПодсказка" id="16"/>
 					<ChildItems>
 						<Table name="ПоИсполнителям" id="17">
 							<Representation>List</Representation>
@@ -518,57 +712,115 @@
 						</Table>
 					</ChildItems>
 				</Page>
-				<Page name="ГруппаПоОтветсвенным" id="72">
-					<Visible>false</Visible>
+				<Page name="ГруппаОшибкиПоОтветсвенным" id="296">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>По ответсвенным</v8:content>
+							<v8:content>5. Ошибки по ответсвенным</v8:content>
 						</v8:item>
 					</Title>
-					<ExtendedTooltip name="ГруппаПоОтветсвеннымРасширеннаяПодсказка" id="73"/>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ошибки по ответсвенным</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОшибкиПоОтветсвеннымРасширеннаяПодсказка" id="297"/>
 					<ChildItems>
-						<Table name="ПоОтветсвенным" id="74">
-							<Representation>List</Representation>
+						<Table name="ПоОтвественным" id="298">
 							<AutoInsertNewRow>true</AutoInsertNewRow>
 							<EnableStartDrag>true</EnableStartDrag>
 							<EnableDrag>true</EnableDrag>
-							<DataPath>1/0:20f12ef7-069e-4f95-85e9-a03c464f1422</DataPath>
+							<DataPath>Объект.ПоОтветственным</DataPath>
 							<RowFilter xsi:nil="true"/>
-							<ContextMenu name="ПоОтветсвеннымКонтекстноеМеню" id="75"/>
-							<AutoCommandBar name="ПоОтветсвеннымКоманднаяПанель" id="76"/>
-							<ExtendedTooltip name="ПоОтветсвеннымРасширеннаяПодсказка" id="77"/>
-							<SearchStringAddition name="ПоОтветсвеннымСтрокаПоиска" id="78">
+							<ContextMenu name="ПоОтвественнымКонтекстноеМеню" id="299"/>
+							<AutoCommandBar name="ПоОтвественнымКоманднаяПанель" id="300"/>
+							<ExtendedTooltip name="ПоОтвественнымРасширеннаяПодсказка" id="301"/>
+							<SearchStringAddition name="ПоОтвественнымСтрокаПоиска" id="302">
 								<AdditionSource>
-									<Item>ПоОтветсвенным</Item>
+									<Item>ПоОтвественным</Item>
 									<Type>SearchStringRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ПоОтветсвеннымСтрокаПоискаКонтекстноеМеню" id="79"/>
-								<ExtendedTooltip name="ПоОтветсвеннымСтрокаПоискаРасширеннаяПодсказка" id="80"/>
+								<ContextMenu name="ПоОтвественнымСтрокаПоискаКонтекстноеМеню" id="303"/>
+								<ExtendedTooltip name="ПоОтвественнымСтрокаПоискаРасширеннаяПодсказка" id="304"/>
 							</SearchStringAddition>
-							<ViewStatusAddition name="ПоОтветсвеннымСостояниеПросмотра" id="81">
+							<ViewStatusAddition name="ПоОтвественнымСостояниеПросмотра" id="305">
 								<AdditionSource>
-									<Item>ПоОтветсвенным</Item>
+									<Item>ПоОтвественным</Item>
 									<Type>ViewStatusRepresentation</Type>
 								</AdditionSource>
-								<ContextMenu name="ПоОтветсвеннымСостояниеПросмотраКонтекстноеМеню" id="82"/>
-								<ExtendedTooltip name="ПоОтветсвеннымСостояниеПросмотраРасширеннаяПодсказка" id="83"/>
+								<ContextMenu name="ПоОтвественнымСостояниеПросмотраКонтекстноеМеню" id="306"/>
+								<ExtendedTooltip name="ПоОтвественнымСостояниеПросмотраРасширеннаяПодсказка" id="307"/>
 							</ViewStatusAddition>
-							<SearchControlAddition name="ПоОтветсвеннымУправлениеПоиском" id="84">
+							<SearchControlAddition name="ПоОтвественнымУправлениеПоиском" id="308">
 								<AdditionSource>
-									<Item>ПоОтветсвенным</Item>
+									<Item>ПоОтвественным</Item>
 									<Type>SearchControl</Type>
 								</AdditionSource>
-								<ContextMenu name="ПоОтветсвеннымУправлениеПоискомКонтекстноеМеню" id="85"/>
-								<ExtendedTooltip name="ПоОтветсвеннымУправлениеПоискомРасширеннаяПодсказка" id="86"/>
+								<ContextMenu name="ПоОтвественнымУправлениеПоискомКонтекстноеМеню" id="309"/>
+								<ExtendedTooltip name="ПоОтвественнымУправлениеПоискомРасширеннаяПодсказка" id="310"/>
 							</SearchControlAddition>
 							<ChildItems>
-								<LabelField name="ПоОтветсвеннымНомерСтроки" id="87">
-									<DataPath>1/0:20f12ef7-069e-4f95-85e9-a03c464f1422/-2</DataPath>
+								<LabelField name="ПоОтвественнымНомерСтроки" id="311">
+									<DataPath>Объект.ПоОтветственным.LineNumber</DataPath>
 									<EditMode>EnterOnInput</EditMode>
-									<ContextMenu name="ПоОтветсвеннымНомерСтрокиКонтекстноеМеню" id="88"/>
-									<ExtendedTooltip name="ПоОтветсвеннымНомерСтрокиРасширеннаяПодсказка" id="89"/>
+									<ContextMenu name="ПоОтвественнымНомерСтрокиКонтекстноеМеню" id="312"/>
+									<ExtendedTooltip name="ПоОтвественнымНомерСтрокиРасширеннаяПодсказка" id="313"/>
 								</LabelField>
+								<InputField name="ПоОтвественнымПрограммист" id="314">
+									<DataPath>Объект.ПоОтветственным.Программист</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымПрограммистКонтекстноеМеню" id="315"/>
+									<ExtendedTooltip name="ПоОтвественнымПрограммистРасширеннаяПодсказка" id="316"/>
+								</InputField>
+								<InputField name="ПоОтвественнымПодсистема" id="317">
+									<DataPath>Объект.ПоОтветственным.Подсистема</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымПодсистемаКонтекстноеМеню" id="318"/>
+									<ExtendedTooltip name="ПоОтвественнымПодсистемаРасширеннаяПодсказка" id="319"/>
+								</InputField>
+								<InputField name="ПоОтвественнымРассмотреть" id="320">
+									<DataPath>Объект.ПоОтветственным.Рассмотреть</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымРассмотретьКонтекстноеМеню" id="321"/>
+									<ExtendedTooltip name="ПоОтвественнымРассмотретьРасширеннаяПодсказка" id="322"/>
+								</InputField>
+								<InputField name="ПоОтвественнымИсправить" id="323">
+									<DataPath>Объект.ПоОтветственным.Исправить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымИсправитьКонтекстноеМеню" id="324"/>
+									<ExtendedTooltip name="ПоОтвественнымИсправитьРасширеннаяПодсказка" id="325"/>
+								</InputField>
+								<InputField name="ПоОтвественнымПроверить" id="326">
+									<DataPath>Объект.ПоОтветственным.Проверить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымПроверитьКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="ПоОтвественнымПроверитьРасширеннаяПодсказка" id="328"/>
+								</InputField>
+								<InputField name="ПоОтвественнымОзнакомиться" id="329">
+									<DataPath>Объект.ПоОтветственным.Ознакомиться</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымОзнакомитьсяКонтекстноеМеню" id="330"/>
+									<ExtendedTooltip name="ПоОтвественнымОзнакомитьсяРасширеннаяПодсказка" id="331"/>
+								</InputField>
+								<InputField name="ПоОтвественнымУточнить" id="332">
+									<DataPath>Объект.ПоОтветственным.Уточнить</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымУточнитьКонтекстноеМеню" id="333"/>
+									<ExtendedTooltip name="ПоОтвественнымУточнитьРасширеннаяПодсказка" id="334"/>
+								</InputField>
+								<InputField name="ПоОтвественнымПрочее" id="335">
+									<DataPath>Объект.ПоОтветственным.Прочее</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымПрочееКонтекстноеМеню" id="336"/>
+									<ExtendedTooltip name="ПоОтвественнымПрочееРасширеннаяПодсказка" id="337"/>
+								</InputField>
+								<InputField name="ПоОтвественнымИтого" id="338">
+									<DataPath>Объект.ПоОтветственным.Итого</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ПоОтвественнымИтогоКонтекстноеМеню" id="339"/>
+									<ExtendedTooltip name="ПоОтвественнымИтогоРасширеннаяПодсказка" id="340"/>
+								</InputField>
 							</ChildItems>
 						</Table>
 					</ChildItems>
@@ -593,6 +845,13 @@
 							<ShowTitle>false</ShowTitle>
 							<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="192"/>
 							<ChildItems>
+								<InputField name="КудаГрузим" id="343">
+									<DataPath>КудаГрузим</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="КудаГрузимКонтекстноеМеню" id="344"/>
+									<ExtendedTooltip name="КудаГрузимРасширеннаяПодсказка" id="345"/>
+								</InputField>
 								<Button name="Загрузить" id="105">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.Загрузить</CommandName>
@@ -605,10 +864,26 @@
 							<TitleLocation>None</TitleLocation>
 							<ShowGrid>true</ShowGrid>
 							<ShowHeaders>true</ShowHeaders>
+							<Edit>true</Edit>
 							<ContextMenu name="ТаблицаЗагрузкиКонтекстноеМеню" id="103"/>
 							<ExtendedTooltip name="ТаблицаЗагрузкиРасширеннаяПодсказка" id="104"/>
 						</SpreadSheetDocumentField>
 					</ChildItems>
+				</Page>
+				<Page name="ГруппаВнешниеОшибки" id="341">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>1 Внешние ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа внешние ошибки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаВнешниеОшибкиРасширеннаяПодсказка" id="342"/>
 				</Page>
 			</ChildItems>
 		</Pages>
@@ -633,6 +908,21 @@
 			</Title>
 			<Type>
 				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КудаГрузим" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Куда грузим?</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>
